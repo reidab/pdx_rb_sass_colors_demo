@@ -1,0 +1,22 @@
+!base_color = #82c555
+!link_color = complement(!base_color)
+
+body
+  color= mix(#000, !base_color, 70%)
+  a
+    &:link
+      color= !link_color
+    &:hover
+      color= lighten(!link_color, 20%)
+    &:visited
+      color= adjust-hue(!link_color, 80deg)
+  #global_header
+    background= !base_color
+  .subnav
+    background= lighten(!base_color, 20%)
+    a:link, a:visited, a:hover
+      color= mix(#000, !base_color, 70%)
+  .event_table .day_of_week, ul.event_list .day_of_week
+    color= darken(!base_color, 20%)
+  #project_description
+    background= hsl(hue(!base_color), saturation(!base_color), 95%)
